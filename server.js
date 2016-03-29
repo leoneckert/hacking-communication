@@ -78,7 +78,7 @@ io.on('connection', function(socket){
 				}
 			}
 			console.log(socket.id + " sends to " + activeUsers[senderIndex].talkingPartner);
-			io.sockets.connected[activeUsers[senderIndex].talkingPartner].emit('yourID', data);
+			io.sockets.connected[activeUsers[senderIndex].talkingPartner].emit('message', data);
 		}	
 
 	});

@@ -8,14 +8,13 @@
 			var input;
 			var button;
 			var socket = io();
+			var yourColor = '#'+Math.floor(Math.random()*16777215).toString(16);
 			
 			socket.on('message', function(data){
-				createDiv("SOMEONE: " + data);
+				createDiv('<p style="margin-top:0px;margin-bottom:0px">MYSELF: ' + data + '</p>');
 			});
 
-			socket.on('yourID', function(data){
-				createDiv("SOMEONE: " + data);
-			});
+	
 
 			socket.on('myindex', function(data){
 				// createDiv("SOMEONE: " + data);
@@ -32,7 +31,8 @@
 
 			function send(){
 				var val = input.value();
-				createDiv("MYSELF: " + val);
+				input.value(" ");
+				createDiv('<p style="margin-top:0px;margin-bottom:0px; color:'+yourColor+'">MYSELF: ' + val + '</p>');
 				socket.emit('message', val);
 			}
 			document.getElementById("myID").innerHTML = "none";
@@ -43,7 +43,7 @@
 		<!-- <h1>Hello</h1> -->
 		<script>
 			document.getElementById("myID").innerHTML = "none";
-			document.getElementById("myID").style.color = '#'+Math.floor(Math.random()*16777215).toString(16);
+			document.getElementById("myID").style.color = yourColor;
 		</script>
 	</body>
 </html>
