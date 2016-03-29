@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/addons/p5.dom.js"></script>
+		<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
+		<script>
+			var input;
+			var button;
+			var socket = io();
+			
+			socket.on('message', function(data){
+				createDiv("SOMEONE: " + data);
+			});
+
+			socket.on('yourID', function(data){
+				createDiv("SOMEONE: " + data);
+			});
+
+			socket.on('myindex', function(data){
+				// createDiv("SOMEONE: " + data);
+				document.getElementById("myID").innerHTML = "You are user: " + data;
+			});
+
+			function setup(){
+				noCanvas();
+
+				input = createInput();
+				button = createButton("Send!");
+				button.mousePressed(send);
+			}
+
+			function send(){
+				var val = input.value();
+				createDiv("MYSELF: " + val);
+				socket.emit('message', val);
+			}
+			document.getElementById("myID").innerHTML = "none";
+		</script>
+	</head>
+	<body>
+		<p id="myID"></p>
+		<!-- <h1>Hello</h1> -->
+		<script>
+			document.getElementById("myID").innerHTML = "none";
+			document.getElementById("myID").style.color = '#'+Math.floor(Math.random()*16777215).toString(16);
+		</script>
+	</body>
+</html>
