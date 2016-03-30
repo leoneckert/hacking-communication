@@ -1,5 +1,6 @@
 # hacking-communication
-![image](https://github.com/leoneckert/hacking-communication/blob/master/experiment/1.png)
+![image](https://github.com/leoneckert/hacking-communication/blob/master/experiment/furry_monster.jpg)
+<!--![image](https://github.com/leoneckert/hacking-communication/blob/master/experiment/1.png)
 ![image](https://github.com/leoneckert/hacking-communication/blob/master/experiment/2.png)
 ![image](https://github.com/leoneckert/hacking-communication/blob/master/experiment/3.png)
 ![image](https://github.com/leoneckert/hacking-communication/blob/master/experiment/4.png)
@@ -15,4 +16,4 @@
 ![image](https://github.com/leoneckert/hacking-communication/blob/master/experiment/15.png)
 ![image](https://github.com/leoneckert/hacking-communication/blob/master/experiment/16.png)
 ![image](https://github.com/leoneckert/hacking-communication/blob/master/experiment/17.png)
-![image](https://github.com/leoneckert/hacking-communication/blob/master/experiment/18.png)
+![image](https://github.com/leoneckert/hacking-communication/blob/master/experiment/18.png)-->

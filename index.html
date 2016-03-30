@@ -11,10 +11,8 @@
 			var yourColor = '#'+Math.floor(Math.random()*16777215).toString(16);
 			
 			socket.on('message', function(data){
-				createDiv('<p style="margin-top:0px;margin-bottom:0px">MYSELF: ' + data + '</p>');
+				createDiv('<p style="margin-top:0px;margin-bottom:0px">SOMEONE: ' + data + '</p>');
 			});
-
-	
 
 			socket.on('myindex', function(data){
 				// createDiv("SOMEONE: " + data);
@@ -39,8 +37,9 @@
 		</script>
 	</head>
 	<body>
+		<h4>Chatroom</h4>
 		<p id="myID"></p>
-		<!-- <h1>Hello</h1> -->
+		
 		<script>
 			document.getElementById("myID").innerHTML = "none";
 			document.getElementById("myID").style.color = yourColor;

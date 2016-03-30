@@ -56,19 +56,8 @@ io.on('connection', function(socket){
 	}
 	
 
-	// socket.on('message', function(){
-	// 	for (var i = 0; i < activeUsers.length; i++){
-	// 		if (activeUsers[i].id == socket.id){
-	// 			io.sockets.connected[socket.id].emit('yourID', "you unique ID is: " + socket.id + " and you are officially connected");	
-	// 		}
-	// 	}
-	// });
+
 	socket.on('message', function(data){
-		// for (var i = 0; i < activeUsers.length; i++){
-		// 	if (activeUsers[i].id == socket.id){
-		// 		io.sockets.connected[socket.id].emit('yourID', "you unique ID is: " + socket.id + " and you are officially connected");	
-		// 	}
-		// }
 		if(gameActive){
 			// findindex:
 			senderIndex = -1;
@@ -88,13 +77,14 @@ io.on('connection', function(socket){
 	socket.on('disconnect', function() {
 
 		console.log("Client has disconnected " + socket.id);
-		var indexToPop = -1;
+		var indexToRemove = -1;
 		for (var i = 0; i < activeUsers.length; i++){
 			if (activeUsers[i].id == socket.id){
-				indexToPop = i;
+				indexToRemove = i;
 			}
 		}
-		activeUsers.pop(activeUsers[indexToPop]);
+
+		activeUsers.splice(indexToRemove, 1);
 		if(gameActive && activeUsers.length < 3){
 			gameActive = false;
 			console.log("the game is over, not enough participants anymore.")
